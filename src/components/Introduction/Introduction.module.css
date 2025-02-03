@@ -1,0 +1,18 @@
+.introduction {
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+.introduction h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.introduction p {
+  font-size: 1.2em;
+  color: #555;
+}
