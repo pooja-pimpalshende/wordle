@@ -4,7 +4,7 @@ const Grid = ({ currentGuess, guesses, turn, message }) => {
   return (
     <div>
       {guesses.map((guess, i) => (
-        <div key={i} data-testid="row">
+        <div key={`guess-${i}`} data-testid="row">
           <Row guess={guess} currentGuess={i === turn ? currentGuess : null} />
         </div>
       ))}

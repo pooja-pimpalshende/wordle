@@ -55,7 +55,7 @@ const useWordle = (solution) => {
   useEffect(() => {
     window.addEventListener("keyup", handleKeyUp);
     return () => window.removeEventListener("keyup", handleKeyUp);
-  }, [currentGuess, history, turn, solution]);
+  }, [currentGuess, history, turn]);
 
   return {
     currentGuess,

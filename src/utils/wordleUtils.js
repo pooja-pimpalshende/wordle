@@ -1,24 +1,27 @@
 export const formatGuess = (currentGuess, solution) => {
-  let solutionArray = [...solution];
-  let formattedGuess = [...currentGuess].map((letter) => {
-    return { key: letter, color: "black" };
-  });
+  const solutionArray = [...solution];
+  const initialGuess = [...currentGuess].map((letter) => ({
+    key: letter,
+    color: "black",
+  }));
 
-  formattedGuess.forEach((letter, i) => {
+  const firstGuess = initialGuess.map((letter, i) => {
     if (solutionArray[i] === letter.key) {
-      formattedGuess[i].color = "green";
       solutionArray[i] = null;
+      return { ...letter, color: "green" };
     }
+    return letter;
   });
 
-  formattedGuess.forEach((letter, i) => {
-    if (solutionArray.includes(letter.key) && letter.color !== "green") {
-      formattedGuess[i].color = "yellow";
+  const secondGuess = firstGuess.map((letter) => {
+    if (letter.color === "black" && solutionArray.includes(letter.key)) {
       solutionArray[solutionArray.indexOf(letter.key)] = null;
+      return { ...letter, color: "yellow" };
     }
+    return letter;
   });
 
-  return formattedGuess;
+  return secondGuess;
 };
 
 export const addNewGuess = (

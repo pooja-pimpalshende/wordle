@@ -1,5 +1,5 @@
 import useWordle from "./useWordle";
-import { vi, test, afterEach, it } from "vitest";
+import { vi, afterEach, it, expect, beforeEach, describe } from "vitest";
 import { act, renderHook } from "@testing-library/react";
 
 describe("useWordle", () => {

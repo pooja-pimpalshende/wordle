@@ -14,7 +14,7 @@ const Wordle = ({ solution }) => {
     } else if (turn > 4) {
       setEndMessage(`😢 Game Over! The correct word is : ${solution}`);
     }
-  }, [isCorrect, turn]);
+  }, [isCorrect, turn, solution]);
 
   return (
     <>
